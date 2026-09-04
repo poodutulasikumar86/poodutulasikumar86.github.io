@@ -1,13 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Poodu Tulasi Kumar | Portfolio</title>
+    <title>Poodu Tulasi Kumar | ECE & VLSI Portfolio</title>
+
+    <meta name="description"
+          content="Portfolio of Poodu Tulasi Kumar - Electronics and Communication Engineering student interested in FPGA, Digital Design, Verilog, VHDL and Python.">
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -15,490 +18,639 @@
             scroll-behavior: smooth;
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f7fb;
-            color: #1f2937;
-            line-height: 1.6;
+        :root {
+            --dark: #0b1120;
+            --dark2: #111827;
+            --blue: #2563eb;
+            --light-blue: #dbeafe;
+            --white: #ffffff;
+            --text: #1e293b;
+            --muted: #64748b;
+            --background: #f8fafc;
+            --border: #e2e8f0;
         }
 
-        header {
-            min-height: 90vh;
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            text-align: center;
-            padding: 30px;
-            background: #111827;
+
+            padding: 18px 8%;
+
+            background: rgba(11, 17, 32, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #60a5fa;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #dbeafe;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #60a5fa;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            padding: 140px 8% 80px;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                radial-gradient(circle at 80% 20%, #1e3a8a 0, transparent 30%),
+                linear-gradient(135deg, #020617, #111827);
+
             color: white;
         }
 
-        header h1 {
-            font-size: 48px;
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .small-title {
+            color: #60a5fa;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 2px;
             margin-bottom: 15px;
         }
 
-        header h2 {
-            font-size: 24px;
-            font-weight: normal;
-            margin-bottom: 15px;
-        }
-
-        header p {
-            color: #d1d5db;
-            max-width: 700px;
-            margin: auto;
-        }
-
-        .buttons {
-            margin-top: 25px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 22px;
-            margin: 6px;
-            border-radius: 8px;
-            text-decoration: none;
-            background: white;
-            color: #111827;
-            font-weight: bold;
-        }
-
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            background: white;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #111827;
-            font-weight: bold;
-            margin: 0 12px;
-        }
-
-        section {
-            max-width: 1000px;
-            margin: auto;
-            padding: 70px 20px;
-        }
-
-        section h2 {
-            font-size: 32px;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-
-        .about {
-            text-align: center;
-            max-width: 800px;
-            margin: auto;
-        }
-
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 18px;
-        }
-
-        .skill-box,
-        .project,
-        .education,
-        .hackathon {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-        }
-
-        .skill-box h3 {
-            margin-bottom: 10px;
-        }
-
-        .project {
-            margin-bottom: 25px;
-        }
-
-        .project h3 {
-            margin-bottom: 10px;
-        }
-
-        .project ul {
-            padding-left: 20px;
-            margin-top: 10px;
-        }
-
-        .tools {
-            margin-top: 15px;
-            font-weight: bold;
-        }
-
-        .education {
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 78px);
+            line-height: 1.05;
             margin-bottom: 20px;
         }
 
+        .hero h1 span {
+            color: #60a5fa;
+        }
+
+        .hero h2 {
+            font-size: clamp(20px, 3vw, 30px);
+            font-weight: normal;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            max-width: 700px;
+            color: #94a3b8;
+            font-size: 17px;
+        }
+
+        .hero-buttons {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .secondary {
+            border: 1px solid #475569;
+            color: white;
+        }
+
+        .secondary:hover {
+            background: #1e293b;
+        }
+
+        /* SOCIAL LINKS */
+
+        .social-links {
+            margin-top: 25px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .social-links a:hover {
+            color: #60a5fa;
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 100px 8%;
+        }
+
+        .section-heading {
+            margin-bottom: 50px;
+        }
+
+        .section-label {
+            color: #2563eb;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            font-size: 42px;
+            margin-top: 8px;
+            color: #0f172a;
+        }
+
+        .section-heading p {
+            max-width: 650px;
+            color: #64748b;
+            margin-top: 10px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: white;
+        }
+
+        .about-container {
+            max-width: 1000px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: #64748b;
+            margin-bottom: 18px;
+        }
+
+        .about-highlight {
+            padding: 30px;
+            background: #f1f5f9;
+            border-left: 4px solid #2563eb;
+            border-radius: 10px;
+        }
+
+        .about-highlight h3 {
+            margin-bottom: 12px;
+        }
+
+        .about-highlight p {
+            color: #64748b;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 28px;
+
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.1);
+            border-color: #93c5fd;
+        }
+
+        .skill-icon {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
+            background: #dbeafe;
+            color: #2563eb;
+
+            font-size: 20px;
+            font-weight: bold;
+
+            margin-bottom: 20px;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: #64748b;
+            font-size: 15px;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            background: white;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 32px;
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.1);
+        }
+
+        .project-number {
+            color: #2563eb;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            font-size: 23px;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .project-card p {
+            color: #64748b;
+            font-size: 15px;
+        }
+
+        .project-tech {
+            margin-top: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech {
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 6px 11px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* EDUCATION */
+
+        .timeline {
+            max-width: 850px;
+            border-left: 2px solid #bfdbfe;
+            padding-left: 35px;
+        }
+
+        .timeline-item {
+            position: relative;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 25px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+
+            width: 13px;
+            height: 13px;
+
+            border-radius: 50%;
+            background: #2563eb;
+
+            left: -43px;
+            top: 32px;
+        }
+
+        .timeline-item .date {
+            color: #2563eb;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .timeline-item h3 {
+            margin-top: 6px;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item p {
+            color: #64748b;
+        }
+
+        /* HACKATHON */
+
+        .hackathon {
+            background: #0f172a;
+            color: white;
+        }
+
+        .hackathon .section-heading h2 {
+            color: white;
+        }
+
+        .hackathon .section-heading p {
+            color: #94a3b8;
+        }
+
+        .hackathon-card {
+            max-width: 900px;
+            padding: 35px;
+
+            border: 1px solid #334155;
+            border-radius: 16px;
+            background: #111827;
+        }
+
+        .hackathon-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .hackathon-card p {
+            color: #94a3b8;
+        }
+
+        .hackathon-badge {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 14px;
+            border-radius: 20px;
+            background: #1e3a8a;
+            color: #bfdbfe;
+            font-size: 13px;
+        }
+
+        /* CONTACT */
+
         .contact {
             text-align: center;
+            background: white;
         }
+
+        .contact-content {
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .contact-content p {
+            color: #64748b;
+            margin-bottom: 25px;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        /* FOOTER */
 
         footer {
-            background: #111827;
-            color: white;
+            background: #020617;
+            color: #94a3b8;
             text-align: center;
-            padding: 25px;
+            padding: 30px 20px;
         }
 
-        @media (max-width: 600px) {
-            header h1 {
+        footer strong {
+            color: white;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 70px 6%;
+            }
+
+            .hero {
+                padding: 130px 6% 70px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading h2 {
                 font-size: 34px;
             }
 
-            header h2 {
-                font-size: 19px;
-            }
-
-            nav a {
-                display: inline-block;
-                margin: 5px;
-            }
         }
+
     </style>
 </head>
 
+
 <body>
-
-<!-- HOME -->
-<header>
-    <div>
-        <h1>Poodu Tulasi Kumar</h1>
-
-        <h2>
-            Electronics & Communication Engineering Student
-        </h2>
-
-        <p>
-            FPGA & Digital Design | Verilog | VHDL | Python
-        </p>
-
-        <div class="buttons">
-            <a class="btn" href="#projects">View Projects</a>
-
-            <a class="btn"
-               href="https://github.com/poodutulasikumar86"
-               target="_blank">
-                GitHub
-            </a>
-
-            <a class="btn"
-               href="https://www.linkedin.com/in/poodutulasikumar86"
-               target="_blank">
-                LinkedIn
-            </a>
-        </div>
-    </div>
-</header>
 
 
 <!-- NAVIGATION -->
+
 <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#education">Education</a>
-    <a href="#hackathon">Hackathon</a>
-    <a href="#contact">Contact</a>
+
+    <a href="#home" class="logo">
+        TK<span>.</span>
+    </a>
+
+    <ul class="nav-links">
+
+        <li><a href="#about">About</a></li>
+
+        <li><a href="#skills">Skills</a></li>
+
+        <li><a href="#projects">Projects</a></li>
+
+        <li><a href="#education">Education</a></li>
+
+        <li><a href="#contact">Contact</a></li>
+
+    </ul>
+
 </nav>
 
 
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            ELECTRONICS & COMMUNICATION ENGINEERING
+        </div>
+
+        <h1>
+            Poodu<br>
+            <span>Tulasi Kumar</span>
+        </h1>
+
+        <h2>
+            FPGA & Digital Design Enthusiast
+        </h2>
+
+        <p class="hero-description">
+
+            Electronics and Communication Engineering student
+            interested in FPGA design, digital systems, RTL design,
+            Verilog, VHDL and hardware development.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a href="#projects" class="button primary">
+                Explore My Work
+            </a>
+
+            <a href="#contact" class="button secondary">
+                Let's Connect
+            </a>
+
+        </div>
+
+
+        <div class="social-links">
+
+            <a href="https://github.com/poodutulasikumar86"
+               target="_blank">
+                GitHub ↗
+            </a>
+
+            <a href="https://www.linkedin.com/in/poodutulasikumar86"
+               target="_blank">
+                LinkedIn ↗
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
 <!-- ABOUT -->
-<section id="about">
 
-    <h2>About Me</h2>
+<section class="about" id="about">
 
-    <div class="about">
+    <div class="section-heading">
 
-        <p>
-            I am an Electronics and Communication Engineering student
-            with knowledge of Digital Electronics, FPGA Design and RTL Design.
-            I am familiar with Verilog and VHDL for standard FPGA workflows,
-            including simulation, synthesis and constraints.
-        </p>
-
-        <br>
-
-        <p>
-            Along with hardware design, I have knowledge of Python and C
-            programming and understand the basics of Machine Learning.
-            I am looking forward to applying these skills in embedded systems
-            and hardware-oriented engineering roles.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- SKILLS -->
-<section id="skills">
-
-    <h2>Skills</h2>
-
-    <div class="skills">
-
-        <div class="skill-box">
-            <h3>Programming Languages</h3>
-            <p>Python, C, Machine Learning (Basic)</p>
+        <div class="section-label">
+            About Me
         </div>
 
-        <div class="skill-box">
-            <h3>HDL & Digital Design</h3>
-            <p>Verilog, VHDL, FPGA & Digital Design</p>
-        </div>
-
-        <div class="skill-box">
-            <h3>Libraries</h3>
-            <p>NumPy, Pandas, Matplotlib</p>
-        </div>
-
-        <div class="skill-box">
-            <h3>EDA Tools</h3>
-            <p>Vivado, Xilinx/AMD, Multisim</p>
-        </div>
-
-        <div class="skill-box">
-            <h3>Development Tools</h3>
-            <p>GitHub, VS Code, Jupyter Notebook</p>
-        </div>
-
-        <div class="skill-box">
-            <h3>Soft Skills</h3>
-            <p>Problem Solving, Communication, Teamwork, Leadership</p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- PROJECTS -->
-<section id="projects">
-
-    <h2>Projects</h2>
-
-    <div class="project">
-
-        <h3>
-            System and Method for Genetic Algorithm Optimized
-            T-Network Impedance Matching of RF Coils with Complex
-            Biological Loads
-        </h3>
-
-        <ul>
-            <li>
-                Developed a T-network impedance matching approach
-                for RF coils with complex biological loads.
-            </li>
-
-            <li>
-                Applied genetic algorithm optimization concepts
-                to improve impedance matching and signal/power transfer.
-            </li>
-
-            <li>
-                Focused on applications related to biomedical sensors
-                and RF systems.
-            </li>
-        </ul>
-
-        <p class="tools">
-            Tools: RF Impedance Matching, Genetic Algorithm, MATLAB
-        </p>
+        <h2>
+            Building my foundation in hardware & digital design.
+        </h2>
 
     </div>
 
 
-    <div class="project">
+    <div class="about-container">
 
-        <h3>
-            Adaptive Light Triggered Alarm System Using
-            Op-Amp Comparator Circuit
-        </h3>
+        <div class="about-text">
 
-        <ul>
-            <li>
-                Designed an adaptive light-triggered alarm circuit
-                using an operational amplifier configured as a comparator.
-            </li>
+            <p>
+                I am an Electronics and Communication Engineering
+                student with a strong interest in digital electronics,
+                FPGA design and RTL development.
+            </p>
 
-            <li>
-                Implemented light-intensity-based switching to trigger
-                the alarm under changing light conditions.
-            </li>
-
-            <li>
-                Applied analog electronics and comparator circuit
-                concepts in a practical circuit.
-            </li>
-        </ul>
-
-        <p class="tools">
-            Tools: Op-Amp, Comparator Circuit, Analog Electronics
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- EDUCATION -->
-<section id="education">
-
-    <h2>Education</h2>
-
-    <div class="education">
-
-        <h3>B.Tech — Electronics and Communication Engineering</h3>
-
-        <p>
-            SRM, Tiruchirappalli
-        </p>
-
-        <p>
-            Jun 2024 – May 2028
-        </p>
-
-        <p>
-            CGPA: 9.24
-        </p>
-
-    </div>
-
-
-    <div class="education">
-
-        <h3>Intermediate — Class XII</h3>
-
-        <p>
-            Sri Siddartha Jr. College, Madanapalle
-        </p>
-
-        <p>
-            Jun 2022 – Apr 2024
-        </p>
-
-        <p>
-            Percentage: 91.6%
-        </p>
-
-    </div>
-
-
-    <div class="education">
-
-        <h3>High School — Class X</h3>
-
-        <p>
-            Chinnatippasamudram
-        </p>
-
-        <p>
-            Jun 2019 – Apr 2022
-        </p>
-
-        <p>
-            Percentage: 85.6%
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- HACKATHON -->
-<section id="hackathon">
-
-    <h2>Hackathon Participation</h2>
-
-    <div class="hackathon">
-
-        <h3>
-            Hackathon Participant — CURRENTS 2026,
-            NIT Tiruchirappalli
-        </h3>
-
-        <br>
-
-        <ul>
-            <li>
-                Participated in a national-level hackathon
-                as part of a technical team.
-            </li>
-
-            <li>
-                Collaborated with team members to develop and present
-                an innovative technical solution.
-            </li>
-        </ul>
-
-    </div>
-
-</section>
-
-
-<!-- CONTACT -->
-<section id="contact">
-
-    <h2>Contact</h2>
-
-    <div class="contact">
-
-        <p>
-            Interested in connecting with me?
-        </p>
-
-        <div class="buttons">
-
-            <a class="btn"
-               href="https://github.com/poodutulasikumar86"
-               target="_blank">
-                GitHub
-            </a>
-
-            <a class="btn"
-               href="https://www.linkedin.com/in/poodutulasikumar86"
-               target="_blank">
-                LinkedIn
-            </a>
-
-            <a class="btn"
-               href="mailto:poodutulasikumar86@gmail.com">
-                Email Me
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- FOOTER -->
-<footer>
-
-    <p>
-        © 2026 Poodu Tulasi Kumar
-    </p>
-
-    <p>
-        Electronics & Communication Engineering
-    </p>
-
-</footer>
-
-</body>
-</html>
+            <p>
+                I am familiar with Verilog and VHDL workflows including
+                simulation, synthesis and constraints
